@@ -1,4 +1,3 @@
-
 ```css
 /* =========================
    CONFIGURAÇÕES GERAIS
@@ -9,6 +8,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+/* NOVA VARIÁVEL */
+
+:root {
+    --cor-destaque: #ff1493;
+}
+
 
 body {
     font-family: "Poppins", sans-serif;
@@ -139,17 +146,26 @@ article {
 
     border-radius: 22px;
 
-    border: 2px solid transparent;
+    /* USANDO A NOVA VARIÁVEL */
+
+    border: 2px solid var(--cor-destaque);
 
     box-shadow: 0 8px 25px rgba(173, 66, 112, 0.15);
 
     transition: 0.3s;
 }
 
-article:hover {
-    transform: translateY(-4px);
 
-    border-color: #ffb6d5;
+/* =========================
+   EFEITO AO PASSAR O MOUSE
+========================= */
+
+article:hover {
+
+    transform: scale(1.02);
+
+    box-shadow:
+        0 12px 35px rgba(255, 20, 147, 0.30);
 }
 
 
@@ -297,6 +313,11 @@ footer {
 ========================= */
 
 body.dark-mode {
+
+    /* NOVA COR DA VARIÁVEL NO MODO ESCURO */
+
+    --cor-destaque: #66ccff;
+
     background: #291a25;
 
     color: #f9d7e7;
@@ -344,6 +365,15 @@ body.dark-mode #theme-toggle {
 
 body.dark-mode footer {
     background: #6d294d;
+}
+
+
+/* SOMBRA MAIS CLARA NO MODO ESCURO */
+
+body.dark-mode article:hover {
+
+    box-shadow:
+        0 12px 35px rgba(102, 204, 255, 0.30);
 }
 
 
