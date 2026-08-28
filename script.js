@@ -1,27 +1,22 @@
-
 ```javascript
-// =========================
-// 🌙 MODO ESCURO
-// =========================
+// MODO ESCURO
 
-const themeToggle = document.getElementById("theme-toggle");
+const botaoTema = document.getElementById("theme-toggle");
 
-themeToggle.addEventListener("click", function () {
+botaoTema.onclick = function () {
 
     document.body.classList.toggle("dark-mode");
 
     if (document.body.classList.contains("dark-mode")) {
-        themeToggle.textContent = "☀️ Modo claro";
+        botaoTema.innerHTML = "☀️ Modo claro";
     } else {
-        themeToggle.textContent = "🌙 Modo escuro";
+        botaoTema.innerHTML = "🌙 Modo escuro";
     }
 
-});
+};
 
 
-// =========================
-// ❤️ 👍 CURTIDAS
-// =========================
+// CURTIDAS
 
 const botoes = document.querySelectorAll(".reaction-button");
 
@@ -29,25 +24,25 @@ botoes.forEach(function (botao) {
 
     let curtiu = false;
 
-    botao.addEventListener("click", function () {
+    botao.onclick = function () {
 
         const numero = botao.querySelector("span");
 
         if (curtiu === false) {
 
-            numero.textContent = Number(numero.textContent) + 1;
+            numero.innerHTML = Number(numero.innerHTML) + 1;
 
             curtiu = true;
 
         } else {
 
-            numero.textContent = Number(numero.textContent) - 1;
+            numero.innerHTML = Number(numero.innerHTML) - 1;
 
             curtiu = false;
 
         }
 
-    });
+    };
 
 });
 ```
